@@ -6,7 +6,7 @@
 /*   By: rluiz <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:27:31 by rluiz             #+#    #+#             */
-/*   Updated: 2023/03/16 15:58:58 by rluiz            ###   ########.fr       */
+/*   Updated: 2023/03/20 11:22:57 by rluiz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strdup(char *src)
 	char			*dup;
 
 	len = ft_strlen(src) + 1;
-	dup = malloc(len);
+	dup = malloc(sizeof(char) * len);
 	if (dup != NULL)
 	{
 		ft_strncpy(dup, src, len);
@@ -55,13 +55,12 @@ char	*ft_strdup(char *src)
 	return (dup);
 }
 /*
-int	main(void)
+int	main(int ac, char **av)
 {
-    char *str = "hello world";
-    char *copy = ft_strdup(str);
-    printf("Original string: %s\n", str);
-    printf("Copied string: %s\n", copy);
-
-    return 0;
-}
-*/
+	if (ac != 2)
+		return (0);
+	char *copy = ft_strdup(av[1]);
+	printf("Original string :%s\n", av[1]);
+	printf("  Copied string :%s\n", copy);
+	return 0;
+}*/
